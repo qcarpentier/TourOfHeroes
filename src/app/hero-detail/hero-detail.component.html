@@ -1,0 +1,17 @@
+<div *ngIf="hero">
+
+  <h2>{{ hero.name | uppercase }} Details</h2>
+  <div>
+    <span>id: </span>{{hero.id}}
+  </div>
+  <div *ngIf="!changeName">
+    <span>name: </span>{{hero.name}}
+  </div>
+  <div *ngIf="changeName">
+    <span>name: </span>
+    <input [(ngModel)]="hero.name" placeholder="name">
+  </div>
+  <br>
+  <button (click)="updateName()">{{buttonText}}</button>
+
+</div>
