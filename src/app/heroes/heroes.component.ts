@@ -22,6 +22,8 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void{
-    this.heroes = this.heroService.getHeroes();
+    // Asynchronous call waits for the Observable to emit the array of heroes
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
   }
 }
